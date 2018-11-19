@@ -1,0 +1,19 @@
+cpuLimit: 250m
+dashboard:
+  enabled: true
+  auth: {}
+memoryLimit: 128Mi
+metrics:
+  prometheus:
+    enabled: true
+rbac:
+  enabled: true
+service:
+  annotations:
+    prometheus.io/scrape: true
+    prometheus.io/port: 8080
+ssl:
+  enabled: false
+  enforced: false
+  defaultCert:
+  defaultKey:
