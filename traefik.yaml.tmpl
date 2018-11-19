@@ -6,7 +6,6 @@ memoryLimit: 128Mi
 metrics:
   prometheus:
     enabled: ${prometheus_enabled}
-replicas: 3
 rbac:
   enabled: true
 service:
@@ -18,11 +17,3 @@ ssl:
   enforced: ${ssl_enforced}
   defaultCert: ${ssl_cert_base64}
   defaultKey: ${ssl_key_base64}
-# tracing:
-  # enabled: false
-  # serviceName: traefik
-  # jaeger:
-  #   localAgentHostPort: "127.0.0.1:6831"
-  #   samplingServerURL: http://localhost:5778/sampling
-  #   samplingType: const
-  #   samplingParam: 1.0
