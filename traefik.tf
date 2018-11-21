@@ -47,12 +47,12 @@ resource "helm_release" "traefik" {
 
   set {
     name  = "tracing.jaeger.localAgentHostPort"
-    value = "jaeger-agent.jaeger.svc.cluster.local:6831"
+    value = "${var.jaeger_agent_endpoint}:6831"
   }
 
   set {
     name  = "tracing.jaeger.samplingServerURL"
-    value = "http://jaeger-agent.jaeger.svc.cluster.local:5778/sampling}"
+    value = "http://${var.jaeger_agent_endpoint}:5778/sampling}"
   }
 
   depends_on = ["null_resource.generate_traefik_config", "data.template_file.traefik"]
